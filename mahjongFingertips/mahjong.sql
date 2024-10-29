@@ -1,27 +1,18 @@
--- Criação do banco de dados
-CREATE DATABASE mahjong;
+CREATE DATABASE Mahjong;
 
--- Usar o banco de dados criado
-USE mahjong;
+USE Mahjong;
 
--- Tabela de Jogadores
-CREATE TABLE jogadores (
-    id BIGINT IDENTITY(1,1) PRIMARY KEY, -- Chave primária autoincremental
-    nome NVARCHAR(100) NOT NULL,      -- Nome do jogador
-    pontuacao INT DEFAULT 0           -- Pontuação do jogador
+-- Tabela para Jogadores
+CREATE TABLE Jogador (
+    Id INT PRIMARY KEY IDENTITY,
+    Nome NVARCHAR(100) NOT NULL,
+    Pontuacao INT NOT NULL
 );
 
--- Tabela de Partidas
-CREATE TABLE partidas (
-    id BIGINT IDENTITY(1,1) PRIMARY KEY,  -- Chave primária autoincremental
-    jogador1_id BIGINT NOT NULL,          -- ID do primeiro jogador
-    jogador2_id BIGINT NOT NULL,          -- ID do segundo jogador
-    vencedor_id BIGINT,                   -- ID do jogador vencedor
-    data_partida DATETIME DEFAULT GETDATE(),  -- Data da partida
-    FOREIGN KEY (jogador1_id) REFERENCES jogadores(id),  -- Chave estrangeira
-    FOREIGN KEY (jogador2_id) REFERENCES jogadores(id),  -- Chave estrangeira
-    FOREIGN KEY (vencedor_id) REFERENCES jogadores(id)   -- Chave estrangeira
+-- Tabela para Partidas
+CREATE TABLE Partida (
+    Id INT PRIMARY KEY IDENTITY,
+    Jogador1Id INT FOREIGN KEY REFERENCES Jogador(Id),
+    Jogador2Id INT FOREIGN KEY REFERENCES Jogador(Id),
+    VencedorId INT FOREIGN KEY REFERENCES Jogador(Id)
 );
-
-DROP TABLE jogadores
-

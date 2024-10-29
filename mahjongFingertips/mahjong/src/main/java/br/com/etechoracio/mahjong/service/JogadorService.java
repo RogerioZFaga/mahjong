@@ -8,18 +8,17 @@ import java.util.List;
 
 @Service
 public class JogadorService {
-
     private final JogadorRepository jogadorRepository;
 
     public JogadorService(JogadorRepository jogadorRepository) {
         this.jogadorRepository = jogadorRepository;
     }
 
-    public List<Jogador> getAllJogadores() {
+    public List<Jogador> listarJogadores() {
         return jogadorRepository.findAll();
     }
 
-    public Jogador createJogador(Jogador jogador) {
+    public Jogador salvarJogador(Jogador jogador) {
         return jogadorRepository.save(jogador);
     }
 }

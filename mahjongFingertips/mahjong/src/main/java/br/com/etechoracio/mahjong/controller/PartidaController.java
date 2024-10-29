@@ -9,7 +9,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/partidas")
 public class PartidaController {
-
     private final PartidaService partidaService;
 
     public PartidaController(PartidaService partidaService) {
@@ -17,12 +16,12 @@ public class PartidaController {
     }
 
     @GetMapping
-    public List<Partida> getAllPartidas() {
-        return partidaService.getAllPartidas();
+    public List<Partida> listarPartidas() {
+        return partidaService.listarPartidas();
     }
 
     @PostMapping
-    public Partida createPartida(@RequestBody Partida partida) {
-        return partidaService.createPartida(partida);
+    public Partida criarPartida(@RequestBody Partida partida) {
+        return partidaService.salvarPartida(partida);
     }
 }

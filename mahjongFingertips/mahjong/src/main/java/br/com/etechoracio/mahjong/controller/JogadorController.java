@@ -9,7 +9,6 @@ import java.util.List;
 @RestController
 @RequestMapping("/jogadores")
 public class JogadorController {
-
     private final JogadorService jogadorService;
 
     public JogadorController(JogadorService jogadorService) {
@@ -17,12 +16,12 @@ public class JogadorController {
     }
 
     @GetMapping
-    public List<Jogador> getAllJogadores() {
-        return jogadorService.getAllJogadores();
+    public List<Jogador> listarJogadores() {
+        return jogadorService.listarJogadores();
     }
 
     @PostMapping
-    public Jogador createJogador(@RequestBody Jogador jogador) {
-        return jogadorService.createJogador(jogador);
+    public Jogador criarJogador(@RequestBody Jogador jogador) {
+        return jogadorService.salvarJogador(jogador);
     }
 }
