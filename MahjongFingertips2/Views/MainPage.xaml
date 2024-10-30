@@ -1,0 +1,32 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MahjongFingertips.Views.MainPage"
+             BackgroundImageSource="background_japan.png">
+
+    <StackLayout Padding="20">
+        <Label Text="Mahjong Fingertips" 
+               FontSize="32" 
+               FontAttributes="Bold"
+               HorizontalOptions="Center" 
+               TextColor="White" />
+
+        <Button Text="Iniciar Jogo"
+                Command="{Binding IniciarPartidaCommand}"
+                BackgroundColor="DarkRed"
+                TextColor="White"
+                FontSize="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Padding="10,5"
+                Margin="0,20,0,0" />
+
+        <Button Text="Configurações"
+                BackgroundColor="DarkRed"
+                TextColor="White"
+                FontSize="20"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Padding="10,5"
+                Margin="0,20,0,0" />
+    </StackLayout>
+</ContentPage>

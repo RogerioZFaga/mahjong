@@ -1,0 +1,40 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MahjongFingertips.Views.GamePage"
+             BackgroundImageSource="game_background.png">
+
+    <Grid Padding="10">
+        <!-- Tabuleiro -->
+        <Grid RowSpacing="5" ColumnSpacing="5" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Exemplo de peças de Mahjong como placeholders -->
+            <Image Source="tile_placeholder.png" Grid.Row="0" Grid.Column="0" />
+            <!-- Repetir para outras posições do grid -->
+        </Grid>
+
+        <!-- Botões de ação -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button Text="Desfazer"
+                    BackgroundColor="DarkRed"
+                    TextColor="White"
+                    WidthRequest="100" />
+            <Button Text="Sair"
+                    BackgroundColor="DarkRed"
+                    TextColor="White"
+                    WidthRequest="100"
+                    Margin="10,0,0,0" />
+        </StackLayout>
+    </Grid>
+</ContentPage>
